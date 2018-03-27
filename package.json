@@ -93,7 +93,7 @@
   "homepage": "https://github.com/food-innovation/mock-member-connex#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "bodyParser": "^1.18.2",
+    "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.2"
   }

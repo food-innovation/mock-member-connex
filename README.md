@@ -1,11 +1,11 @@
 # mock-member-connex
 
-A mock server that mimics functions from [CyberGlue's MemberConnex](http://cyberglue.com) oAuth2 system.
+A mock server that mimics functions from [CyberGlue](http://cyberglue.com)'s [MemberConnex](https://www.memberconnex.com) oAuth2 system.
 
-Use this for local development when you don't have or want access to the real MemberConnex system.
+Use this for local development when you don't have, or want, access to the real MemberConnex system.
 
-* `develop` — [circleci badge] [codecov badge]
-* `master` — [circleci badge] [codecov badge]
+* `develop` — [![CircleCI](https://circleci.com/gh/food-innovation/mock-member-connex/tree/develop.svg?style=svg)](https://circleci.com/gh/food-innovation/mock-member-connex/tree/develop) [![codecov](https://codecov.io/gh/food-innovation/mock-member-connex/branch/develop/graph/badge.svg)](https://codecov.io/gh/food-innovation/mock-member-connex)
+* `master` — [![CircleCI](https://circleci.com/gh/food-innovation/mock-member-connex/tree/master.svg?style=svg)](https://circleci.com/gh/food-innovation/mock-member-connex/tree/master) [![codecov](https://codecov.io/gh/food-innovation/mock-member-connex/branch/master/graph/badge.svg)](https://codecov.io/gh/food-innovation/mock-member-connex)
 
 ## Known limitations
 
@@ -26,8 +26,8 @@ Use of this mock server assumes that you have a copy of `Introduction to OAuth2 
 You may set the following environment variables.
 
 * `PORT` — defaults to `9000`
-* `CLIENT_ID` — defaults to 'testing'
-* `CLIENT_SECRET` — defaults to 'testing'
+* `CLIENT_ID` — defaults to `'testing'`
+* `CLIENT_SECRET` — defaults to `'testing'`
 
 ### Start the server
 
@@ -37,10 +37,12 @@ Run `npm start`
 
 The `mock-member-connex` has been published as a docker image so you can just add it to your platform's `docker-compose.yml` file and customise the various environment variables there.
 
+I put it up in my personal docker account for now.  It might move.
+
     version: "3"
     services:
       mmc:
-        image: mock-member-connex
+        image: davesag/mock-member-connex
         ports:
           - 9001:9001
         healthcheck:
