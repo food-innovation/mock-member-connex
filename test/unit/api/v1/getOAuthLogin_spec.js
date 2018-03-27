@@ -61,7 +61,9 @@ describe('getOAuthLogin', () => {
     })
 
     it('calls res.json with an invalid request error', () => {
-      expect(res.json).to.have.been.calledWith({ error: ERRORS.INVALID_REQUEST })
+      expect(res.json).to.have.been.calledWith({
+        error: ERRORS.INVALID_REQUEST
+      })
     })
   })
 
@@ -87,7 +89,9 @@ describe('getOAuthLogin', () => {
     })
 
     it('calls res.json with an invalid request error', () => {
-      expect(res.json).to.have.been.calledWith({ error: ERRORS.INVALID_REQUEST })
+      expect(res.json).to.have.been.calledWith({
+        error: ERRORS.INVALID_REQUEST
+      })
     })
   })
 })
