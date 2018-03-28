@@ -8,7 +8,8 @@
     "npm": "5.7.1"
   },
   "scripts": {
-    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "eslint-check":
+      "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "lint": "eslint .",
     "precommit": "lint-staged",
     "prettier": "prettier --single-quote --no-semi --write '**/*.{js,json}'",
@@ -19,24 +20,21 @@
     "test": "npm run test:unit",
     "test:all": "npm run test:unit; npm run test:integration",
     "test:integration": "npm run test:server; npm run test:db",
-    "test:server": "find ./test/server -name '*_spec.js' | NODE_ENV=test xargs mocha --require ./test/server/test_helper.js --bail",
-    "test:db": "find ./test/db -name '*_spec.js' | NODE_ENV=test xargs mocha --require ./test/db/test_helper.js --bail",
-    "test:unit": "find ./test/unit -name '*_spec.js' | NODE_ENV=test xargs mocha --require ./test/unit/test_helper.js",
-    "test:unit:cov": "find ./test/unit -name '*_spec.js' | NODE_ENV=test xargs nyc mocha --require ./test/unit/test_helper.js",
+    "test:server":
+      "find ./test/server -name '*_spec.js' | NODE_ENV=test xargs mocha --require ./test/server/test_helper.js --bail",
+    "test:db":
+      "find ./test/db -name '*_spec.js' | NODE_ENV=test xargs mocha --require ./test/db/test_helper.js --bail",
+    "test:unit":
+      "find ./test/unit -name '*_spec.js' | NODE_ENV=test xargs mocha --require ./test/unit/test_helper.js",
+    "test:unit:cov":
+      "find ./test/unit -name '*_spec.js' | NODE_ENV=test xargs nyc mocha --require ./test/unit/test_helper.js",
     "test:all:cov": "nyc npm run test:all"
   },
-  "keywords": [
-    "MemberConnex",
-    "mock",
-    "oauth"
-  ],
+  "keywords": ["MemberConnex", "mock", "oauth"],
   "author": "Dave Sag <david.sag@industrie.co>",
   "license": "MIT",
   "lint-staged": {
-    "**/*.{js,json}": [
-      "prettier --single-quote --no-semi --write",
-      "git add"
-    ]
+    "**/*.{js,json}": ["prettier --single-quote --no-semi --write", "git add"]
   },
   "nyc": {
     "check-coverage": true,
@@ -45,17 +43,9 @@
     "statements": 100,
     "functions": 100,
     "branches": 100,
-    "include": [
-      "src/**/*.js"
-    ],
-    "exclude": [
-      "src/index.js",
-      "src/utils/config.js"
-    ],
-    "reporter": [
-      "lcov",
-      "text"
-    ],
+    "include": ["src/**/*.js"],
+    "exclude": ["src/index.js", "src/utils/config.js"],
+    "reporter": ["lcov", "text"],
     "all": true,
     "cache": true
   },
@@ -81,7 +71,7 @@
     "nyc": "^11.5.0",
     "prettier": "^1.11.1",
     "proxyquire": "^2.0.0",
-    "sinon": "^4.4.8",
+    "sinon": "^4.4.9",
     "sinon-chai": "^3.0.0",
     "sinon-stub-promise": "^4.0.0",
     "supertest": "^3.0.0"
