@@ -1,5 +1,7 @@
 # mock-member-connex
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/food-innovation/mock-member-connex.svg)](https://greenkeeper.io/)
+
 A mock server that mimics functions from [CyberGlue](http://cyberglue.com)'s [MemberConnex](https://www.memberconnex.com) oAuth2 system.
 
 Use this for local development when you don't have, or want, access to the real MemberConnex system.
