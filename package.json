@@ -4,7 +4,7 @@
   "description": "A mock server that mimics the CyberGlue MemberConnex system",
   "main": "index.js",
   "engines": {
-    "node": "9.9.0",
+    "node": "9.10.0",
     "npm": "5.7.1"
   },
   "scripts": {
