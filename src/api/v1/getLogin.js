@@ -1,15 +1,12 @@
-const { CLIENT_ID, CLIENT_SECRET } = require('../../utils/config')
 const { ERRORS } = require('../../utils/constants')
 
 /*
-  https://[MCX Portal URL]/Login?Action=OAuthUserInfo&
-    access_token=[some-token]
+  https://[MCX Portal URL]/Login?Action=OAuthUserInfo&access_token=[some-token]
 */
-
 const getLogin = (req, res) => {
   const { Action: action, access_token: token } = req.query
 
-  if (action !== 'OAuthUserInfo') {
+  if (action !== 'OAuthUserInfo' || !token) {
     res.status(400).json({ error: ERRORS.INVALID_REQUEST })
   } else {
     // return scoped user data
