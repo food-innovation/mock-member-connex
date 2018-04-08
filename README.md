@@ -98,9 +98,7 @@ Error Responses
 
 ### `POST /Login`
 
-Implements the Token Exchange and Member Info data retreival depending on the supplied `Action` param.
-
-When `Action = 'Token'` Returns
+Simulates the Token Exchange.
 
     200 Okay
 
@@ -108,7 +106,19 @@ When `Action = 'Token'` Returns
       access_token: 'some access token'
     }
 
-When `Action = 'OAuthUserInfo'` Returns
+Error Response
+
+    400 Unauthorised
+
+    {
+      error: 'Invalid Request'
+    }
+
+### `GET /Login`
+
+Simulates Member Info data retrieval.
+
+Returns
 
     200 Okay
 
@@ -128,7 +138,7 @@ Error Response
 
 ### Prerequisites
 
-* [NodeJS](htps://nodejs.org), version 9.10.0 or better (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
+* [NodeJS](htps://nodejs.org), version 9.11.1 or better (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
 * [Docker](https://www.docker.com) (Use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the homebrew version)
 
 ### Initialisation
