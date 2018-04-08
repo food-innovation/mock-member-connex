@@ -1,4 +1,4 @@
-FROM node:9.9.0-alpine
+FROM node:9.11.1-alpine
 MAINTAINER david.sag@industrie.co
 RUN mkdir member-connex
 WORKDIR member-connex
