@@ -148,7 +148,8 @@ Returns
 Params: You must provide the following
 
 * `Provider=AFC`
-* `redirect_uri` (some valid uri to redirect to)
+* `Redir` (some valid uri to redirect to)
+* `sig` An MD5 hash of all of the the supplied fields excluding this sig, as outlined by the nice people at CyberGlue
 
 You may provide the following field names
 
