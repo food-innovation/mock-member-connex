@@ -32,6 +32,8 @@ const labelledSelect = (name, label, value, options) => `
 const makeResponse = (redirectUri, values) =>
   `<html><head><title>Mock MemberConnex Register</title></head>
 <body>
+  <h1>Sign up</h1>
+  <p>Please enter your name and email address.</p>
   <form action="/handleRegister" method="post">
     ${labelledField('firstname', 'First Name', values.firstname)}
     ${labelledField('lastname', 'Last Name', values.lastname)}
@@ -55,14 +57,14 @@ const makeResponse = (redirectUri, values) =>
       { value: 'agency', text: 'Agency' }
     ])}
     <input name="redirectUri" type="hidden" value="${redirectUri}" />
-    <button type="submit">Log in</button>
+    <button type="submit">Register</button>
   </form>
 </body>
 </html>
 `
 
 /*
-  Provider=AFC&varionsfields&redirect_uri=[redirect_uri]
+  Provider=AFC&[various]=[fields]&redirect_uri=[redirect_uri]
 */
 const getRegister = (req, res) => {
   const { Provider: provider, redirect_uri: redirectUri, ...fields } = req.query

@@ -43,7 +43,6 @@ describe('getRegister', () => {
   }
 
   context('no fields provided', () => {
-
     before(() => {
       getRegister(req, res)
     })
@@ -58,14 +57,16 @@ describe('getRegister', () => {
   })
 
   context('a named field provided', () => {
-
     before(() => {
-      getRegister({
-        query: {
-          ...req.query,
-          firstname: 'Bob'
-        }
-      }, res)
+      getRegister(
+        {
+          query: {
+            ...req.query,
+            firstname: 'Bob'
+          }
+        },
+        res
+      )
     })
 
     after(() => {
@@ -82,14 +83,16 @@ describe('getRegister', () => {
   })
 
   context('a named selection provided', () => {
-
     before(() => {
-      getRegister({
-        query: {
-          ...req.query,
-          usertype: 'supplier'
-        }
-      }, res)
+      getRegister(
+        {
+          query: {
+            ...req.query,
+            usertype: 'supplier'
+          }
+        },
+        res
+      )
     })
 
     after(() => {
