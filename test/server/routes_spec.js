@@ -1,6 +1,7 @@
 const { expect } = require('chai')
 const request = require('supertest')
 const { start } = require('../../src/server')
+const { version } = require('../../package.json')
 
 describe('Routes', () => {
   let server
@@ -20,7 +21,7 @@ describe('Routes', () => {
         .end((err, res) => {
           expect(err).to.not.exist
           expect(res.statusCode).to.equal(200)
-          expect(res.body[0].version).to.equal(1)
+          expect(res.body[0].version).to.equal(version)
           expect(res.body[0].path).to.equal('/api/v1')
           done()
         })
