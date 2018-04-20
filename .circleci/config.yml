@@ -7,7 +7,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:9.9.0
+      - image: circleci/node:9.11.1
         environment:
         - NODE_ENV: test
 
@@ -22,12 +22,11 @@ jobs:
 
       - run:
           name: Install global packages
-          # command: sudo npm install -g codecov greenkeeper-lockfile@1
-          command: sudo npm install -g codecov
+          command: sudo npm install -g codecov greenkeeper-lockfile@1
 
-      # - run:
-      #     name: Greenkeeper Lockfile
-      #     command: greenkeeper-lockfile-update
+      - run:
+          name: Greenkeeper Lockfile
+          command: greenkeeper-lockfile-update
 
       - run:
           name: Install dependencies
@@ -50,9 +49,9 @@ jobs:
           name: Server Tests
           command: npm run test:server
 
-      # - run:
-      #     name: Push any lockfile changes
-      #     command: greenkeeper-lockfile-upload
+      - run:
+          name: Push any lockfile changes
+          command: greenkeeper-lockfile-upload
 
       - run:
           name: Send reports to codecov.io

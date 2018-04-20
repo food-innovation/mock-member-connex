@@ -1,5 +1,7 @@
 # mock-member-connex
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/food-innovation/mock-member-connex.svg)](https://greenkeeper.io/)
+
 A mock server that mimics functions from [CyberGlue](http://cyberglue.com)'s [MemberConnex](https://www.memberconnex.com) oAuth2 system.
 
 Use this for local development when you don't have, or want, access to the real MemberConnex system.
@@ -28,6 +30,7 @@ You may set the following environment variables.
 * `PORT` — defaults to `9000`
 * `CLIENT_ID` — defaults to `'testing'`
 * `CLIENT_SECRET` — defaults to `'testing'`
+* `MEMBER_CONNEX_SALT` — defaults to `12345678`
 
 ### Start the server
 
@@ -96,9 +99,7 @@ Error Responses
 
 ### `POST /Login`
 
-Implements the Token Exchange and Member Info data retreival depending on the supplied `Action` param.
-
-When `Action = 'Token'` Returns
+Simulates the Token Exchange.
 
     200 Okay
 
@@ -106,7 +107,19 @@ When `Action = 'Token'` Returns
       access_token: 'some access token'
     }
 
-When `Action = 'OAuthUserInfo'` Returns
+Error Response
+
+    400 Unauthorised
+
+    {
+      error: 'Invalid Request'
+    }
+
+### `GET /Login`
+
+Simulates Member Info data retrieval.
+
+Returns
 
     200 Okay
 
@@ -122,11 +135,39 @@ Error Response
       error: 'Invalid Request'
     }
 
+### `GET /Register`
+
+Simulates the display of the registration screen.
+
+Returns
+
+    200 Okay and an HTML form with a username and password field which imitates
+    the basic function of the MemberConnex register form.  The data provided is
+    neither checked nor used.
+
+Params: You must provide the following
+
+* `Provider=AFC`
+* `Redir` (some valid uri to redirect to)
+* `sig` An MD5 hash of all of the the supplied fields excluding this sig, as outlined by the nice people at CyberGlue
+
+You may provide the following field names
+
+* `firstname`
+* `lastname`
+* `email`
+* `usertype`
+* `stakeholdertype`
+
+### `POST /handleRegister`
+
+redirects to the provided `redirect_uri`
+
 ## Development
 
 ### Prerequisites
 
-* [NodeJS](htps://nodejs.org), version 9.9.0 or better (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
+* [NodeJS](htps://nodejs.org), version 9.11.1 or better (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
 * [Docker](https://www.docker.com) (Use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the homebrew version)
 
 ### Initialisation
