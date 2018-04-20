@@ -134,6 +134,33 @@ Error Response
       error: 'Invalid Request'
     }
 
+### `GET /Register`
+
+Simulates the display of the registration screen.
+
+Returns
+
+    200 Okay and an HTML form with a username and password field which imitates
+    the basic function of the MemberConnex register form.  The data provided is
+    neither checked nor used.
+
+Params: You must provide the following
+
+* `Provider=AFC`
+* `redirect_uri` (some valid uri to redirect to)
+
+You may provide the following field names
+
+* `firstname`
+* `lastname`
+* `email`
+* `usertype`
+* `stakeholdertype`
+
+### `POST /handleRegister`
+
+redirects to the provided `redirect_uri`
+
 ## Development
 
 ### Prerequisites

@@ -5,7 +5,9 @@ const {
   v1_postLogin,
   v1_getLogin,
   v1_postHandleLogin,
-  v1_getOAuthLogin
+  v1_getOAuthLogin,
+  v1_getRegister,
+  v1_postHandleRegister
 } = require('./api')
 
 module.exports = {
@@ -13,10 +15,12 @@ module.exports = {
     '/': getVersions,
     '/ping': getPing,
     '/Login': v1_getLogin,
-    '/OAuthLogin': v1_getOAuthLogin
+    '/OAuthLogin': v1_getOAuthLogin,
+    '/Register': v1_getRegister
   },
   post: {
     '/Login': v1_postLogin,
-    '/handleLogin': v1_postHandleLogin
+    '/handleLogin': v1_postHandleLogin,
+    '/handleRegister': v1_postHandleRegister
   }
 }
