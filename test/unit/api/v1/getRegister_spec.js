@@ -2,8 +2,20 @@ const { expect } = require('chai')
 const sinon = require('sinon')
 
 const { ERRORS } = require('../../../../src/utils/constants')
+const sigMaker = require('../../../../src/utils/sigMaker')
 
 const getRegister = require('../../../../src/api/v1/getRegister')
+
+const addSig = req => {
+  const { query } = req
+  const sig = sigMaker(query)
+  return {
+    query: {
+      ...query,
+      sig
+    }
+  }
+}
 
 describe('getRegister', () => {
   const res = {
@@ -38,13 +50,13 @@ describe('getRegister', () => {
   const req = {
     query: {
       Provider: 'AFC',
-      redirect_uri: 'some redirect'
+      Redir: 'some redirect'
     }
   }
 
   context('no fields provided', () => {
     before(() => {
-      getRegister(req, res)
+      getRegister(addSig(req), res)
     })
 
     after(() => {
@@ -59,12 +71,12 @@ describe('getRegister', () => {
   context('a named field provided', () => {
     before(() => {
       getRegister(
-        {
+        addSig({
           query: {
             ...req.query,
             firstname: 'Bob'
           }
-        },
+        }),
         res
       )
     })
@@ -85,12 +97,12 @@ describe('getRegister', () => {
   context('a named selection provided', () => {
     before(() => {
       getRegister(
-        {
+        addSig({
           query: {
             ...req.query,
             usertype: 'supplier'
           }
-        },
+        }),
         res
       )
     })
@@ -108,17 +120,31 @@ describe('getRegister', () => {
     })
   })
 
-  testErrorCondition('Provider = something else', {
-    query: {
-      ...req.query,
-      Provider: 'something else'
-    }
-  })
+  testErrorCondition(
+    'Provider = something else',
+    addSig({
+      query: {
+        ...req.query,
+        Provider: 'something else'
+      }
+    })
+  )
 
-  testErrorCondition('missing redirect_uri', {
+  testErrorCondition(
+    'missing Redir',
+    addSig({
+      query: {
+        ...req.query,
+        Redir: null
+      }
+    })
+  )
+
+  testErrorCondition('bad sig', {
     query: {
       ...req.query,
-      redirect_uri: null
+      Redir: null,
+      sig: 'not-a-valid-sig'
     }
   })
 })

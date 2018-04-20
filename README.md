@@ -30,6 +30,7 @@ You may set the following environment variables.
 * `PORT` — defaults to `9000`
 * `CLIENT_ID` — defaults to `'testing'`
 * `CLIENT_SECRET` — defaults to `'testing'`
+* `MEMBER_CONNEX_SALT` — defaults to `12345678`
 
 ### Start the server
 

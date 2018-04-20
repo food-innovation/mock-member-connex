@@ -1,4 +1,5 @@
 const { ERRORS } = require('../../utils/constants')
+const sigMaker = require('../../utils/sigMaker')
 
 const safeOption = (label, value) =>
   value !== undefined ? `${label}="${value}"` : ''
@@ -64,12 +65,13 @@ const makeResponse = (redirectUri, values) =>
 `
 
 /*
-  Provider=AFC&[various]=[fields]&redirect_uri=[redirect_uri]
+  Provider=AFC&[various]=[fields]&Redir=[redirect_uri]&sig=[md5hash]
 */
 const getRegister = (req, res) => {
-  const { Provider: provider, redirect_uri: redirectUri, ...fields } = req.query
+  const { sig, ...allFields } = req.query
+  const { Provider: provider, Redir: redirectUri, ...fields } = allFields
 
-  if (provider !== 'AFC' || !redirectUri) {
+  if (provider !== 'AFC' || !redirectUri || sig !== sigMaker(allFields)) {
     res.status(400).json({ error: ERRORS.INVALID_REQUEST })
   } else {
     res.send(makeResponse(redirectUri, fields))
