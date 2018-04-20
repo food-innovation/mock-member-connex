@@ -39,6 +39,12 @@ const makeResponse = (redirectUri, values) =>
     ${labelledField('firstname', 'First Name', values.firstname)}
     ${labelledField('lastname', 'Last Name', values.lastname)}
     ${labelledField('email', 'Email', values.email)}
+    ${labelledField('companyname', 'Company Name', values.companyname)}
+    ${labelledField(
+      'companyregisteredname',
+      'Regsitered Company Name',
+      values.companyregisteredname
+    )}
     ${labelledField('password', 'Password', undefined, 'password')}
     ${labelledField('password2', 'Re-Enter Password', undefined, 'password')}
     ${labelledSelect(
