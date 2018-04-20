@@ -77,7 +77,7 @@ Returns a list of API versions.
 
     [
       {
-        version: 1,
+        version: "1.0.3",
         path: '/api/v1'
       }
     ]
@@ -135,7 +135,7 @@ Error Response
       error: 'Invalid Request'
     }
 
-### `GET /Register`
+### `GET /Register?[fields as per below]`
 
 Simulates the display of the registration screen.
 
@@ -151,17 +151,19 @@ Params: You must provide the following
 * `Redir` (some valid uri to redirect to)
 * `sig` An MD5 hash of all of the the supplied fields excluding this sig, as outlined by the nice people at CyberGlue
 
-You may provide the following field names
+You can also provide the following field names
 
 * `firstname`
 * `lastname`
 * `email`
 * `usertype`
 * `stakeholdertype`
+* `companyname`
+* `companyregisteredname`
 
 ### `POST /handleRegister`
 
-redirects to the provided `redirect_uri`
+redirects to the provided `Redir` uri.
 
 ## Development
 

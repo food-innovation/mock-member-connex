@@ -2,6 +2,7 @@ const { expect } = require('chai')
 const sinon = require('sinon')
 
 const getVersions = require('../../../src/api/getVersions')
+const { version } = require('../../../package.json')
 
 describe('getVersions', () => {
   const req = {}
@@ -11,7 +12,7 @@ describe('getVersions', () => {
 
   const expected = [
     {
-      version: 1,
+      version,
       path: '/api/v1'
     }
   ]
