@@ -1,7 +1,9 @@
+const { version } = require('../../package.json')
+
 const getVersions = (req, res) => {
   res.json([
     {
-      version: 1,
+      version,
       path: '/api/v1'
     }
   ])
