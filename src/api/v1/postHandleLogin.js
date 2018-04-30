@@ -1,9 +1,13 @@
+const { set } = require('../../utils/memoryStore')
+
 const postHandleLogin = (req, res) => {
   const {
-    // username,
+    username,
     // password,
     redirectUri
   } = req.body
+
+  set('email', username)
 
   res.redirect(redirectUri)
 }
