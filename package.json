@@ -1,6 +1,6 @@
 {
   "name": "@fial/mock-member-connex",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A mock server that mimics the CyberGlue MemberConnex system",
   "main": "index.js",
   "engines": {
