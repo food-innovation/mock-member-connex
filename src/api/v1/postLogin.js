@@ -1,3 +1,5 @@
+const uuid = require('uuid/v4')
+
 const { CLIENT_ID, CLIENT_SECRET } = require('../../utils/config')
 const { ERRORS } = require('../../utils/constants')
 
@@ -28,7 +30,7 @@ const postLogin = (req, res) => {
     res.status(400).json({ error: ERRORS.INVALID_REQUEST })
   } else {
     res.json({
-      access_token: 'some-awesome-access-token'
+      access_token: uuid()
     })
   }
 }

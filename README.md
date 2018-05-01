@@ -77,7 +77,7 @@ Returns a list of API versions.
 
     [
       {
-        version: "1.0.3",
+        version: "1.0.6",
         path: '/api/v1'
       }
     ]
@@ -169,7 +169,7 @@ redirects to the provided `Redir` uri.
 
 ### Prerequisites
 
-* [NodeJS](htps://nodejs.org), version 9.11.1 or better (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
+* [NodeJS](htps://nodejs.org), version 10+ (I use [`nvm`](https://github.com/creationix/nvm) to manage Node versions — `brew install nvm`.)
 * [Docker](https://www.docker.com) (Use [Docker for Mac](https://docs.docker.com/docker-for-mac/), not the homebrew version)
 
 ### Initialisation

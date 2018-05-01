@@ -1,10 +1,15 @@
 const { expect } = require('chai')
 const sinon = require('sinon')
+const proxyquire = require('proxyquire')
 
 const { CLIENT_ID, CLIENT_SECRET } = require('../../../../src/utils/config')
 const { ERRORS } = require('../../../../src/utils/constants')
 
-const postLogin = require('../../../../src/api/v1/postLogin')
+const mockUuid = () => 'some-awesome-uuid-string'
+
+const postLogin = proxyquire('../../../../src/api/v1/postLogin', {
+  'uuid/v4': mockUuid
+})
 
 describe('postLogin', () => {
   const res = {
@@ -47,7 +52,7 @@ describe('postLogin', () => {
 
   context('Action = Token', () => {
     const expected = {
-      access_token: 'some-awesome-access-token'
+      access_token: mockUuid()
     }
 
     before(() => {
