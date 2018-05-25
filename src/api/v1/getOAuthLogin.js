@@ -1,6 +1,6 @@
 const { stringify } = require('qs')
-const { CLIENT_ID } = require('../../utils/config')
-const { ERRORS } = require('../../utils/constants')
+const { CLIENT_ID } = require('src/utils/config')
+const { ERRORS } = require('src/utils/constants')
 
 const makeResponse = redirectUri =>
   `<html><head><title>Mock MemberConnex</title></head>

@@ -1,8 +1,8 @@
-const { ERRORS } = require('../../utils/constants')
-const { fial, fialAdmin } = require('../../scopedData')
+const { ERRORS } = require('src/utils/constants')
+const { fial, fialAdmin } = require('src/scopedData')
 
-const { get, clear } = require('../../utils/memoryStore')
-const addressIsFial = require('../../utils/addressIsFial')
+const { get, clear } = require('src/utils/memoryStore')
+const addressIsFial = require('src/utils/addressIsFial')
 
 /*
   https://[MCX Portal URL]/Login?Action=OAuthUserInfo&access_token=[some-token]

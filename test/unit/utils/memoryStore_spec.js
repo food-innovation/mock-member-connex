@@ -1,6 +1,6 @@
 const { expect } = require('chai')
 
-const { get, set } = require('../../../src/utils/memoryStore')
+const { get, set } = require('src/utils/memoryStore')
 
 describe('memoryStore', () => {
   const key = 'a key'

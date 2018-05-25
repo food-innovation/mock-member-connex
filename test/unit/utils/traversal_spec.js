@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 const { expect } = require('chai')
 
-const { outer, test_inner } = require('../fixtures/api')
+const { outer, test_inner } = require('test/unit/fixtures/api')
 
 describe('traversal', () => {
   it('traversed the outer', () => {

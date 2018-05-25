@@ -1,9 +1,9 @@
 const { expect } = require('chai')
 const sinon = require('sinon')
 
-const { ERRORS } = require('../../../../src/utils/constants')
+const { ERRORS } = require('src/utils/constants')
 
-const getLogin = require('../../../../src/api/v1/getLogin')
+const getLogin = require('src/api/v1/getLogin')
 
 describe('getLogin', () => {
   const res = {

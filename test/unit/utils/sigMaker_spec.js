@@ -1,6 +1,6 @@
 const { expect } = require('chai')
 
-const sigMaker = require('../../../src/utils/sigMaker')
+const sigMaker = require('src/utils/sigMaker')
 
 describe('sigMaker', () => {
   const salt = '12345678'

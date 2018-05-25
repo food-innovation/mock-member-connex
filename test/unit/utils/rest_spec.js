@@ -1,6 +1,6 @@
 const { expect } = require('chai')
 const sinon = require('sinon')
-const proxyquire = require('proxyquire').noCallThru()
+const proxyquire = require('proxyquire')
 
 describe('rest', () => {
   const fakeController = () => {}
@@ -11,11 +11,12 @@ describe('rest', () => {
     },
     bogus: {
       '/': fakeController
-    }
+    },
+    '@noCallThru': true
   }
 
-  const rest = proxyquire('../../../src/utils/rest', {
-    '../routes': fakeRoutes
+  const rest = proxyquire('src/utils/rest', {
+    'src/routes': fakeRoutes
   })
 
   const app = {

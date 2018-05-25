@@ -1,4 +1,4 @@
-const routes = require('../routes')
+const routes = require('src/routes')
 
 const METHODS = ['get', 'post', 'patch', 'put', 'delete']
 

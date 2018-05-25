@@ -1,14 +1,13 @@
 const { expect } = require('chai')
 const sinon = require('sinon')
-const proxyquire = require('proxyquire').noCallThru()
+const proxyquire = require('proxyquire')
 
 describe('server', () => {
-  const mockApp = {
-    listen: sinon.stub().returnsPromise()
-  }
+  const mockApp = { listen: sinon.stub(), '@noCallThru': true }
+
   const mockMakeApp = sinon.stub().returns(mockApp)
 
-  const server = proxyquire('../../src/server', {
+  const server = proxyquire('src/server', {
     './utils/appMaker': mockMakeApp
   })
 

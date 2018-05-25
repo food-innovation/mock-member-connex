@@ -77,7 +77,7 @@ Returns a list of API versions.
 
     [
       {
-        version: "1.0.6",
+        version: "1.0.7",
         path: '/api/v1'
       }
     ]
