@@ -1,6 +1,6 @@
 const { expect } = require('chai')
 
-const addressIsFial = require('../../../src/utils/addressIsFial')
+const addressIsFial = require('src/utils/addressIsFial')
 
 describe('addressIsFial', () => {
   context('given a fial.com.au address', () => {

@@ -7,8 +7,8 @@ describe('api/', () => {
   const mockTraversal = () => mockTraverse
 
   before(() => {
-    proxyquire('../../../src/api/', {
-      '../utils/traversal': mockTraversal
+    proxyquire('src/api/', {
+      'src/utils/traversal': mockTraversal
     })
   })
 

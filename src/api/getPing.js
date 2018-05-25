@@ -1,4 +1,4 @@
-const uptime = require('../utils/uptime')
+const uptime = require('src/utils/uptime')
 
 const getPing = (req, res) => {
   res.json({

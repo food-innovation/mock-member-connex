@@ -11,8 +11,8 @@ describe('getPing', () => {
 
   const mockUptime = () => fakeUptime
 
-  const getPing = proxyquire('../../../src/api/getPing', {
-    '../utils/uptime': mockUptime
+  const getPing = proxyquire('src/api/getPing', {
+    'src/utils/uptime': mockUptime
   })
 
   const expected = {

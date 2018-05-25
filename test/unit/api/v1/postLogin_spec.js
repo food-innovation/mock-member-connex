@@ -2,12 +2,12 @@ const { expect } = require('chai')
 const sinon = require('sinon')
 const proxyquire = require('proxyquire')
 
-const { CLIENT_ID, CLIENT_SECRET } = require('../../../../src/utils/config')
-const { ERRORS } = require('../../../../src/utils/constants')
+const { CLIENT_ID, CLIENT_SECRET } = require('src/utils/config')
+const { ERRORS } = require('src/utils/constants')
 
 const mockUuid = () => 'some-awesome-uuid-string'
 
-const postLogin = proxyquire('../../../../src/api/v1/postLogin', {
+const postLogin = proxyquire('src/api/v1/postLogin', {
   'uuid/v4': mockUuid
 })
 

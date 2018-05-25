@@ -1,5 +1,5 @@
-const { ERRORS } = require('../../utils/constants')
-const sigMaker = require('../../utils/sigMaker')
+const { ERRORS } = require('src/utils/constants')
+const sigMaker = require('src/utils/sigMaker')
 
 const safeOption = (label, value) =>
   value !== undefined ? `${label}="${value}"` : ''

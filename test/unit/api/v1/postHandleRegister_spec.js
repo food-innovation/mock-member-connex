@@ -1,7 +1,7 @@
 const { expect } = require('chai')
 const sinon = require('sinon')
 
-const postHandleRegister = require('../../../../src/api/v1/postHandleRegister')
+const postHandleRegister = require('src/api/v1/postHandleRegister')
 
 describe('postHandleRegister', () => {
   const res = {
