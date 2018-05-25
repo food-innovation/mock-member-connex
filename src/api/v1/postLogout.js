@@ -8,6 +8,8 @@ const computeHash = require('src/utils/computeHash')
 */
 const postLogout = (req, res) => {
   const { Person_id: id, hash } = req.body
+  console.log('id', id)
+  console.log('hash', hash)
 
   if (computeHash(id) !== hash)
     res.status(400).json({ error: ERRORS.INVALID_REQUEST })
