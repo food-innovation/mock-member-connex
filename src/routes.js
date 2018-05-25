@@ -3,6 +3,7 @@ const {
   getPing,
   getVersions,
   v1_postLogin,
+  v1_postLogout,
   v1_getLogin,
   v1_postHandleLogin,
   v1_getOAuthLogin,
@@ -20,6 +21,7 @@ module.exports = {
   },
   post: {
     '/Login': v1_postLogin,
+    '/Logout': v1_postLogout,
     '/handleLogin': v1_postHandleLogin,
     '/handleRegister': v1_postHandleRegister
   }
