@@ -12,10 +12,10 @@ describe('appMaker', () => {
     use: mockUse
   })
 
-  const makeApp = proxyquire('../../../src/utils/appMaker', {
+  const makeApp = proxyquire('src/utils/appMaker', {
     express: fakeExpress,
     cors: mockCors,
-    './rest': mockRest
+    'src/utils/rest': mockRest
   })
 
   let app

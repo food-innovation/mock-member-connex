@@ -1,7 +1,7 @@
 const { expect } = require('chai')
 const request = require('supertest')
-const { start } = require('../../src/server')
-const { version } = require('../../package.json')
+const { start } = require('src/server')
+const { version } = require('package.json')
 
 describe('Routes', () => {
   let server
@@ -14,6 +14,9 @@ describe('Routes', () => {
     server.close()
   })
 
+  // NOTE: if this is not returning the right version then
+  // check that an old version of the mock server is not
+  // actually running in the background
   describe('GET /', () => {
     it('returns a list of versions and status code 200', done => {
       request(server)
@@ -21,8 +24,9 @@ describe('Routes', () => {
         .end((err, res) => {
           expect(err).to.not.exist
           expect(res.statusCode).to.equal(200)
-          expect(res.body[0].version).to.equal(version)
-          expect(res.body[0].path).to.equal('/api/v1')
+          expect(res.body).to.have.length(1)
+          expect(res.body[0]).to.have.property('version', version)
+          expect(res.body[0]).to.have.property('path', '/api/v1')
           done()
         })
     })
@@ -35,7 +39,7 @@ describe('Routes', () => {
         .end((err, res) => {
           expect(err).to.not.exist
           expect(res.statusCode).to.equal(200)
-          expect(res.body.response).to.equal('Okay')
+          expect(res.body).to.have.property('response', 'Okay')
           done()
         })
     })

@@ -77,7 +77,7 @@ Returns a list of API versions.
 
     [
       {
-        version: "1.0.6",
+        version: "1.0.7",
         path: '/api/v1'
       }
     ]
@@ -164,6 +164,31 @@ You can also provide the following field names
 ### `POST /handleRegister`
 
 redirects to the provided `Redir` uri.
+
+### `POST /Logout`
+
+Logs the user out
+
+Body Params
+
+    {
+      "Person_id": The member's id,
+      "hash": an HMAC 256 hash derived from the Person_id and APP Secret.
+    }
+
+Returns
+
+    {
+      "success": <true|false>
+    }
+
+Error Response
+
+    400 Unauthorised
+
+    {
+      error: 'Invalid Request'
+    }
 
 ## Development
 

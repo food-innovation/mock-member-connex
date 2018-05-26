@@ -1,6 +1,6 @@
 const { expect } = require('chai')
 
-const uptime = require('../../../src/utils/uptime')
+const uptime = require('src/utils/uptime')
 
 describe('uptime', () => {
   let value

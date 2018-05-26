@@ -1,7 +1,7 @@
 const uuid = require('uuid/v4')
 
-const { CLIENT_ID, CLIENT_SECRET } = require('../../utils/config')
-const { ERRORS } = require('../../utils/constants')
+const { CLIENT_ID, CLIENT_SECRET } = require('src/utils/config')
+const { ERRORS } = require('src/utils/constants')
 
 /*
   https://[MCX Portal URL]/Login?Action=Token&

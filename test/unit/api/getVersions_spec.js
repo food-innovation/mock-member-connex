@@ -1,8 +1,8 @@
 const { expect } = require('chai')
 const sinon = require('sinon')
 
-const getVersions = require('../../../src/api/getVersions')
-const { version } = require('../../../package.json')
+const getVersions = require('src/api/getVersions')
+const { version } = require('package.json')
 
 describe('getVersions', () => {
   const req = {}

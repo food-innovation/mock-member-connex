@@ -1,4 +1,4 @@
-const { set } = require('../../utils/memoryStore')
+const { set } = require('src/utils/memoryStore')
 
 const postHandleLogin = (req, res) => {
   const {
