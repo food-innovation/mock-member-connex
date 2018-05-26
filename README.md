@@ -165,6 +165,31 @@ You can also provide the following field names
 
 redirects to the provided `Redir` uri.
 
+### `POST /Logout`
+
+Logs the user out
+
+Body Params
+
+    {
+      "Person_id": The member's id,
+      "hash": an HMAC 256 hash derived from the Person_id and APP Secret.
+    }
+
+Returns
+
+    {
+      "success": <true|false>
+    }
+
+Error Response
+
+    400 Unauthorised
+
+    {
+      error: 'Invalid Request'
+    }
+
 ## Development
 
 ### Prerequisites
