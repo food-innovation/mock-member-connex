@@ -10,6 +10,7 @@ const rest = require('src/utils/rest')
 const makeApp = () => {
   const app = express()
   app.use(cors())
+  app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: true }))
   // add any other middlewares here
 
