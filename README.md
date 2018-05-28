@@ -2,7 +2,7 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/food-innovation/mock-member-connex.svg)](https://greenkeeper.io/)
 
-A mock server that mimics functions from [CyberGlue](http://cyberglue.com)'s [MemberConnex](https://www.memberconnex.com) oAuth2 system.
+A mock server that mimics functions from [CyberGlue](http://cyberglue.com)'s [MemberConnex](https://www.memberconnex.com) system, as needed by Fial.
 
 Use this for local development when you don't have, or want, access to the real MemberConnex system.
 
@@ -21,7 +21,12 @@ The mock server returns the very bare happy-path responses for the MemberConnex 
 
 ## Use
 
-Use of this mock server assumes that you have a copy of `Introduction to OAuth2 with MemberConnex.pdf` which is available from CyberGlue.
+Use of this mock server assumes that you have copes of
+
+* `Introduction to OAuth2 with MemberConnex.pdf`,
+* `Intro to MCX API for FIAL - AFC.pdf`
+
+both of which are available from CyberGlue.
 
 ### Environment Variables
 
@@ -77,8 +82,12 @@ Returns a list of API versions.
 
     [
       {
-        version: "1.0.7",
-        path: '/api/v1'
+        version: "1.1.0",
+        path: '/api/1'
+      },
+      {
+        version: "2",
+        path: '/API/2.0'
       }
     ]
 
@@ -564,6 +573,108 @@ Returns the updated user data
       "telhome": "",
       "telmobile": "",
       "title": "",
+      "usertype": ""
+    }
+
+Errors
+
+    401 Unauthorized
+
+    {
+      "code": 234199,
+      "message": "Invalid Authorization Token."
+    }
+
+### `GET /API/2.0/Event`
+
+Gets a list of the events known to MemberConnex.
+
+Headers
+
+    Authorization: Bearer <token>
+
+Returns
+
+    200 Okay
+
+    [
+      {
+        "id": 85,
+        "name": "Amazing Test Event",
+        "city": "Sydney",
+        "region": "NSW",
+        "datestart": "2018-11-15",
+        "timestart": "09:00:00",
+        "dateend": "2018-11-15",
+        "timeend": "17:00:00",
+        "abstract": "<p>The Amazing Test Event serves as the meeting place for companies in industries.<\/p> ",
+        "location": "TBC",
+        "locationtype": "Physical",
+        "text": "<h2>About the Event<\/h2> <p>Amazing Test Event serves as the meeting place for companies in industries.<\/p> <p>In collaboration with the Department of Testy McTestface and the Australian Government\u2019s Industry Growth Centres, the Event attracts businesses across Australia\u2019s industry sectors.<\/p>",
+        "accessrestrictions": "",
+        "availtickets": 0,
+        "duration": "",
+        "externalid": "",
+        "freeevent": true,
+        "idsession": 0,
+        "maxtickets": 0,
+        "previewvideoembedcode": "",
+        "type": "",
+        "venue": "",
+        "videoembedcode": "",
+        "videoinstructions": "",
+        "webinarurl": ""
+      },
+      ...
+    ]
+
+Errors
+
+    401 Unauthorized
+
+    {
+      "code": 234199,
+      "message": "Invalid Authorization Token."
+    }
+
+### `GET /API/2.0/Event/:id`
+
+Gets the data for a MemberConnex event with the given id.
+
+Headers
+
+    Authorization: Bearer <token>
+
+Returns
+
+    200 Okay
+
+    {
+      "id": 85,
+      "name": "Amazing Test Event",
+      "city": "Sydney",
+      "region": "NSW",
+      "datestart": "2018-11-15",
+      "timestart": "09:00:00",
+      "dateend": "2018-11-15",
+      "timeend": "17:00:00",
+      "abstract": "<p>The Amazing Test Event serves as the meeting place for companies in industries.<\/p> ",
+      "location": "TBC",
+      "locationtype": "Physical",
+      "text": "<h2>About the Event<\/h2> <p>Amazing Test Event serves as the meeting place for companies in industries.<\/p> <p>In collaboration with the Department of Testy McTestface and the Australian Government\u2019s Industry Growth Centres, the Event attracts businesses across Australia\u2019s industry sectors.<\/p>",
+      "accessrestrictions": "",
+      "availtickets": 0,
+      "duration": "",
+      "externalid": "",
+      "freeevent": true,
+      "idsession": 0,
+      "maxtickets": 0,
+      "previewvideoembedcode": "",
+      "type": "",
+      "venue": "",
+      "videoembedcode": "",
+      "videoinstructions": "",
+      "webinarurl": ""
       "usertype": ""
     }
 
