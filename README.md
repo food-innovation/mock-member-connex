@@ -188,6 +188,394 @@ Error Response
       error: 'Invalid Request'
     }
 
+### `GET /API/2.0/Company`
+
+Gets a list of the companies known to MemberConnex.
+
+Headers
+
+    Authorization: Bearer <token>
+
+URL Params
+
+    Action=List
+    DataFilter=2
+
+Note these params do not seem to do anything.
+
+Returns
+
+    200 Okay
+
+    [
+      {
+        "id": 12265,
+        "abn": "123456789",
+        "abstract": "",
+        "doacquistion": "2018-01-31",
+        "domembership": "1901-01-01",
+        "externalid": "",
+        "idaccount": 12345,
+        "idcompanyparent": 0,
+        "idlocationbilling": 54321,
+        "idlocationprimary": 54321,
+        "idprofile": 12265,
+        "keyperson": 0,
+        "mail": "support@testycorp.tes",
+        "mailoptin": false,
+        "membershipcode1": "",
+        "membershipcode2": "",
+        "membershipcode3": "",
+        "name": "TestyCorp Pty Ltd",
+        "namefulllegal": "",
+        "nzcompanynumber": "",
+        "telfree": "",
+        "telhome": "",
+        "text": "",
+        "website": "https://www.testycorp.tes/"
+      },
+      ...
+    ]
+
+Errors
+
+    401 Unauthorized
+
+    {
+      "code": 234199,
+      "message": "Invalid Authorization Token."
+    }
+
+### `GET /API/2.0/Company/:id`
+
+Gets the data for a MemberConnex company with the given id.
+
+Headers
+
+    Authorization: Bearer <token>
+
+Returns
+
+    200 Okay
+
+    {
+      "id": 12265,
+      "abn": "123456789",
+      "abstract": "",
+      "doacquistion": "2018-01-31",
+      "domembership": "1901-01-01",
+      "externalid": "",
+      "idaccount": 12345,
+      "idcompanyparent": 0,
+      "idlocationbilling": 54321,
+      "idlocationprimary": 54321,
+      "idprofile": 12265,
+      "keyperson": 0,
+      "mail": "support@testycorp.tes",
+      "mailoptin": false,
+      "membershipcode1": "",
+      "membershipcode2": "",
+      "membershipcode3": "",
+      "name": "TestyCorp Pty Ltd",
+      "namefulllegal": "",
+      "nzcompanynumber": "",
+      "telfree": "",
+      "telhome": "",
+      "text": "",
+      "website": "https://www.testycorp.tes/"
+    }
+
+Errors
+
+    401 Unauthorized
+
+    {
+      "code": 234199,
+      "message": "Invalid Authorization Token."
+    }
+
+### `PUT /API/2.0/Company/:id`
+
+Updates some of the data for a MemberConnex user with the given id.
+
+Headers
+
+    Authorization: Bearer <token>
+    Content-Type: application/json
+
+Body Param
+
+Any of the fields below can be updated.
+
+    {
+      "abn": "123456789",
+      "abstract": "",
+      "mail": "support@testycorp.tes",
+      "mailoptin": false,
+      "name": "TestyCorp Pty Ltd",
+      "namefulllegal": "",
+      "telfree": "",
+      "telhome": "",
+      "text": "",
+      "website": "https://www.testycorp.tes/"
+    }
+
+
+Returns the following structure with the updated data.
+
+    200 Okay
+
+    {
+      "id": 12265,
+      "abn": "123456789",
+      "abstract": "",
+      "doacquistion": "2018-01-31",
+      "domembership": "1901-01-01",
+      "externalid": "",
+      "idaccount": 12345,
+      "idcompanyparent": 0,
+      "idlocationbilling": 54321,
+      "idlocationprimary": 54321,
+      "idprofile": 12265,
+      "keyperson": 0,
+      "mail": "support@testycorp.tes",
+      "mailoptin": false,
+      "membershipcode1": "",
+      "membershipcode2": "",
+      "membershipcode3": "",
+      "name": "TestyCorp Pty Ltd",
+      "namefulllegal": "",
+      "nzcompanynumber": "",
+      "telfree": "",
+      "telhome": "",
+      "text": "",
+      "website": "https://www.testycorp.tes/"
+    }
+
+Errors
+
+    401 Unauthorized
+
+    {
+      "code": 234199,
+      "message": "Invalid Authorization Token."
+    }
+
+
+### `GET /API/2.0/Person`
+
+Gets a list of the users known to MemberConnex.
+
+Headers
+
+    Authorization: Bearer <token>
+
+URL Params
+
+    Action=List
+    DataFilter=1
+
+Note these params do not seem to do anything.
+
+Returns
+
+    200 Okay
+
+    [
+      {
+        "id": 13669,
+        "firstname": "Testy",
+        "lastname": "McTestface",
+        "fullname": "Testy McTestface",
+        "about": "",
+        "doacquistion": "2018-05-14",
+        "dob": "1996-02-29",
+        "domembership": "1901-01-01",
+        "externalid": "",
+        "gender": "Male",
+        "idaccountpriv": 24687,
+        "idaddress": 52324,
+        "idaddressdel": 0,
+        "initials": "",
+        "jobtitle": "",
+        "mail": "testy.mctestface@test.tes",
+        "mailbounces": 0,
+        "mailoptin": true,
+        "mailsecondary": "",
+        "membershipcode1": "",
+        "membershipcode2": "",
+        "membershipcode3": "",
+        "middlenames": "",
+        "postnominal": "",
+        "preferredname": "",
+        "qualifications": "",
+        "skype": "",
+        "telbus": "",
+        "telddi": "",
+        "telfax": "",
+        "telhome": "",
+        "telmobile": "",
+        "title": "",
+        "usertype": ""
+      },
+      ...
+    ]
+
+Errors
+
+    401 Unauthorized
+
+    {
+      "code": 234199,
+      "message": "Invalid Authorization Token."
+    }
+
+### `GET /API/2.0/Person/:id`
+
+Gets the data for a MemberConnex user with the given id.
+
+Headers
+
+    Authorization: Bearer <token>
+
+Returns
+
+    200 Okay
+
+    {
+      "id": 13669,
+      "firstname": "Testy",
+      "lastname": "McTestface",
+      "fullname": "Testy McTestface",
+      "about": "",
+      "doacquistion": "2018-05-14",
+      "dob": "1996-02-29",
+      "domembership": "1901-01-01",
+      "externalid": "",
+      "gender": "Male",
+      "idaccountpriv": 24687,
+      "idaddress": 52324,
+      "idaddressdel": 0,
+      "initials": "",
+      "jobtitle": "",
+      "mail": "testy.mctestface@test.tes",
+      "mailbounces": 0,
+      "mailoptin": true,
+      "mailsecondary": "",
+      "membershipcode1": "",
+      "membershipcode2": "",
+      "membershipcode3": "",
+      "middlenames": "",
+      "postnominal": "",
+      "preferredname": "",
+      "qualifications": "",
+      "skype": "",
+      "telbus": "",
+      "telddi": "",
+      "telfax": "",
+      "telhome": "",
+      "telmobile": "",
+      "title": "",
+      "usertype": ""
+    }
+
+Errors
+
+    401 Unauthorized
+
+    {
+      "code": 234199,
+      "message": "Invalid Authorization Token."
+    }
+
+### `PUT /API/2.0/Person/:id`
+
+Updates some of the data for a MemberConnex user with the given id.
+
+Headers
+
+    Authorization: Bearer <token>
+    Content-Type: application/json
+
+Body Param
+
+Any of the fields below can be updated.
+
+    {
+      "firstname": "Testy",
+      "lastname": "McTestface",
+      "fullname": "Testy McTestface",
+      "about": "",
+      "dob": "1996-02-29",
+      "gender": "Male",
+      "initials": "",
+      "jobtitle": "",
+      "mail": "testy.mctestface@test.tes",
+      "mailoptin": true,
+      "mailsecondary": "",
+      "middlenames": "",
+      "postnominal": "",
+      "preferredname": "",
+      "qualifications": "",
+      "skype": "",
+      "telbus": "",
+      "telddi": "",
+      "telfax": "",
+      "telhome": "",
+      "telmobile": "",
+      "title": ""
+    }
+
+Returns the updated user data
+
+    200 Okay
+
+    {
+      "id": 13669,
+      "firstname": "Testy",
+      "lastname": "McTestface",
+      "fullname": "Testy McTestface",
+      "about": "",
+      "doacquistion": "2018-05-14",
+      "dob": "1996-02-29",
+      "domembership": "1901-01-01",
+      "externalid": "",
+      "gender": "Male",
+      "idaccountpriv": 24687,
+      "idaddress": 52324,
+      "idaddressdel": 0,
+      "initials": "",
+      "jobtitle": "",
+      "mail": "testy.mctestface@test.tes",
+      "mailbounces": 0,
+      "mailoptin": true,
+      "mailsecondary": "",
+      "membershipcode1": "",
+      "membershipcode2": "",
+      "membershipcode3": "",
+      "middlenames": "",
+      "postnominal": "",
+      "preferredname": "",
+      "qualifications": "",
+      "skype": "",
+      "telbus": "",
+      "telddi": "",
+      "telfax": "",
+      "telhome": "",
+      "telmobile": "",
+      "title": "",
+      "usertype": ""
+    }
+
+Errors
+
+    401 Unauthorized
+
+    {
+      "code": 234199,
+      "message": "Invalid Authorization Token."
+    }
+
 ## Development
 
 ### Prerequisites
