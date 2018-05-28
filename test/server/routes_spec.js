@@ -24,9 +24,11 @@ describe('Routes', () => {
         .end((err, res) => {
           expect(err).to.not.exist
           expect(res.statusCode).to.equal(200)
-          expect(res.body).to.have.length(1)
+          expect(res.body).to.have.length(2)
           expect(res.body[0]).to.have.property('version', version)
-          expect(res.body[0]).to.have.property('path', '/api/v1')
+          expect(res.body[0]).to.have.property('path', '/api/1')
+          expect(res.body[1]).to.have.property('version', 2)
+          expect(res.body[1]).to.have.property('path', '/API/2.0')
           done()
         })
     })

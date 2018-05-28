@@ -1,4 +1,3 @@
-const { ERRORS } = require('src/utils/constants')
 const computeHash = require('src/utils/computeHash')
 
 /*

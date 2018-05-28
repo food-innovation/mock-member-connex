@@ -8,7 +8,11 @@ const {
   v1_postHandleLogin,
   v1_getOAuthLogin,
   v1_getRegister,
-  v1_postHandleRegister
+  v1_postHandleRegister,
+  v2_companies_getCompanies,
+  v2_companies_getCompany,
+  v2_people_getPeople,
+  v2_people_getPerson
 } = require('./api')
 
 module.exports = {
@@ -17,7 +21,11 @@ module.exports = {
     '/ping': getPing,
     '/Login': v1_getLogin,
     '/OAuthLogin': v1_getOAuthLogin,
-    '/Register': v1_getRegister
+    '/Register': v1_getRegister,
+    '/API/2.0/Company': v2_companies_getCompanies,
+    '/API/2.0/Company/:id': v2_companies_getCompany,
+    '/API/2.0/Person': v2_people_getPeople,
+    '/API/2.0/Person/:id': v2_people_getPerson
   },
   post: {
     '/Login': v1_postLogin,
