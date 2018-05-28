@@ -7,7 +7,7 @@ const json = `{
   "timestart": "09:00:00",
   "dateend": "2018-04-27",
   "timeend": "18:00:00",
-  "abstract": " <p>FIAL is pleased to announce our participation at the Asian Test Exhibition once more in 2018.<\/p> ",
+  "abstract": " <p>FIAL is pleased to announce our participation at the Asian Test Exhibition once more in 2018.</p> ",
   "location": "1 Expo Drive",
   "locationtype": "Physical",
   "text": "<p>FIAL is pleased to announce its participation at the <strong style=\\"background-color: initial;\\">Asian Test Exhibition</strong> in 2018.</p><p>Held every two years, Testing And Test in Singapore is the most exciting tradeshow in Asia.</p>",
