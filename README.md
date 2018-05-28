@@ -169,12 +169,10 @@ redirects to the provided `Redir` uri.
 
 Logs the user out
 
-Body Params
+Params as Form URL encoded
 
-    {
-      "Person_id": The member's id,
-      "hash": an HMAC 256 hash derived from the Person_id and APP Secret.
-    }
+    Person_id=The member's id
+    hash=an HMAC 256 hash derived from the Person_id and APP Secret
 
 Returns
 

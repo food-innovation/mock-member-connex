@@ -11,8 +11,7 @@ const postLogout = (req, res) => {
   console.log('id', id)
   console.log('hash', hash)
 
-  if (computeHash(id) !== hash)
-    res.status(400).json({ error: ERRORS.INVALID_REQUEST })
+  if (computeHash(id) !== hash) res.status(400).json({ success: false })
   else res.json({ success: true })
 }
 
