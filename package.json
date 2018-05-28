@@ -1,6 +1,6 @@
 {
   "name": "@fial/mock-member-connex",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "A mock server that mimics the CyberGlue MemberConnex system",
   "main": "index.js",
   "engines": {
@@ -8,8 +8,7 @@
     "npm": "6.1.0"
   },
   "scripts": {
-    "eslint-check":
-      "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "lint": "eslint .",
     "precommit": "lint-staged",
     "prettier": "prettier --single-quote --no-semi --write '**/*.{js,json}'",
@@ -20,21 +19,24 @@
     "test": "npm run test:unit",
     "test:all": "npm run test:unit; npm run test:integration",
     "test:integration": "npm run test:server; npm run test:db",
-    "test:server":
-      "find ./test/server -name '*_spec.js' | NODE_PATH=. NODE_ENV=test xargs mocha --require ./test/server/test_helper.js --bail",
-    "test:db":
-      "find ./test/db -name '*_spec.js' | NODE_PATH=. NODE_ENV=test xargs mocha --require ./test/db/test_helper.js --bail",
-    "test:unit":
-      "find ./test/unit -name '*_spec.js' | NODE_PATH=. NODE_ENV=test xargs mocha --require ./test/unit/test_helper.js",
-    "test:unit:cov":
-      "find ./test/unit -name '*_spec.js' | NODE_PATH=. NODE_ENV=test xargs nyc mocha --require ./test/unit/test_helper.js",
+    "test:server": "find ./test/server -name '*_spec.js' | NODE_PATH=. NODE_ENV=test xargs mocha --require ./test/server/test_helper.js --bail",
+    "test:db": "find ./test/db -name '*_spec.js' | NODE_PATH=. NODE_ENV=test xargs mocha --require ./test/db/test_helper.js --bail",
+    "test:unit": "find ./test/unit -name '*_spec.js' | NODE_PATH=. NODE_ENV=test xargs mocha --require ./test/unit/test_helper.js",
+    "test:unit:cov": "find ./test/unit -name '*_spec.js' | NODE_PATH=. NODE_ENV=test xargs nyc mocha --require ./test/unit/test_helper.js",
     "test:all:cov": "nyc npm run test:all"
   },
-  "keywords": ["MemberConnex", "mock", "oauth"],
+  "keywords": [
+    "MemberConnex",
+    "mock",
+    "oauth"
+  ],
   "author": "Dave Sag <david.sag@industrie.co>",
   "license": "MIT",
   "lint-staged": {
-    "**/*.{js,json}": ["prettier --single-quote --no-semi --write", "git add"]
+    "**/*.{js,json}": [
+      "prettier --single-quote --no-semi --write",
+      "git add"
+    ]
   },
   "nyc": {
     "check-coverage": true,
@@ -43,9 +45,18 @@
     "statements": 100,
     "functions": 100,
     "branches": 100,
-    "include": ["src/**/*.js"],
-    "exclude": ["src/index.js", "src/utils/config.js"],
-    "reporter": ["lcov", "text"],
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/index.js",
+      "src/utils/config.js",
+      "src/scopedData/index.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
     "all": true,
     "cache": true
   },
@@ -68,7 +79,7 @@
     "lint-staged": "^7.1.2",
     "mocha": "^5.2.0",
     "nyc": "^11.8.0",
-    "prettier": "^1.12.1",
+    "prettier": "^1.13.0",
     "proxyquire": "^2.0.0",
     "sinon": "^5.0.10",
     "sinon-chai": "^3.1.0",

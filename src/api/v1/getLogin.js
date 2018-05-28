@@ -1,5 +1,5 @@
 const { ERRORS } = require('src/utils/constants')
-const { fial, fialAdmin } = require('src/scopedData')
+const { fial, fialAdmin } = require('src/scopedData/users')
 
 const { get, clear } = require('src/utils/memoryStore')
 const addressIsFial = require('src/utils/addressIsFial')
