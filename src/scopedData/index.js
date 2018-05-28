@@ -1,9 +1,7 @@
-const basic = require('./basic')
-const fial = require('./fial')
-const fialAdmin = require('./fialAdmin')
+const users = require('./users')
+const companies = require('./companies')
 
 module.exports = {
-  basic,
-  fial,
-  fialAdmin
+  users,
+  companies
 }
