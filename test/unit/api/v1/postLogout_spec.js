@@ -2,8 +2,6 @@ const { expect } = require('chai')
 const sinon = require('sinon')
 const computeHash = require('src/utils/computeHash')
 
-const { ERRORS } = require('src/utils/constants')
-
 const postLogout = require('src/api/v1/postLogout')
 
 describe('postLogout', () => {
@@ -33,7 +31,7 @@ describe('postLogout', () => {
 
     it('calls res.json with INVALID_REQUEST error', () => {
       expect(res.json).to.have.been.calledWith({
-        error: ERRORS.INVALID_REQUEST
+        success: false
       })
     })
   })
