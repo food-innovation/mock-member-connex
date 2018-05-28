@@ -12,7 +12,9 @@ const {
   v2_companies_getCompanies,
   v2_companies_getCompany,
   v2_people_getPeople,
-  v2_people_getPerson
+  v2_people_getPerson,
+  v2_companies_putCompany,
+  v2_people_putPerson
 } = require('./api')
 
 module.exports = {
@@ -32,5 +34,9 @@ module.exports = {
     '/Logout': v1_postLogout,
     '/handleLogin': v1_postHandleLogin,
     '/handleRegister': v1_postHandleRegister
+  },
+  put: {
+    '/API/2.0/Company/:id': v2_companies_putCompany,
+    '/API/2.0/Person/:id': v2_people_putPerson
   }
 }
