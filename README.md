@@ -82,7 +82,7 @@ Returns a list of API versions.
 
     [
       {
-        version: "1.1.0",
+        version: "1.1.1",
         path: '/api/1'
       },
       {
@@ -259,6 +259,8 @@ Errors
 
 Gets the data for a MemberConnex company with the given id.
 
+Accepted Company ids are `123`, `12265`
+
 Headers
 
     Authorization: Bearer <token>
@@ -305,7 +307,9 @@ Errors
 
 ### `PUT /API/2.0/Company/:id`
 
-Updates some of the data for a MemberConnex user with the given id.
+Updates some of the data for a MemberConnex company with the given id.
+
+Accepted Company ids are `123`, `12265`
 
 Headers
 
@@ -392,7 +396,7 @@ Returns
 
     [
       {
-        "id": 13669,
+        "id": 13616,
         "firstname": "Testy",
         "lastname": "McTestface",
         "fullname": "Testy McTestface",
@@ -443,6 +447,8 @@ Errors
 
 Gets the data for a MemberConnex user with the given id.
 
+Accepted Person ids are `13616`, `13668`, and `8487645`
+
 Headers
 
     Authorization: Bearer <token>
@@ -452,7 +458,7 @@ Returns
     200 Okay
 
     {
-      "id": 13669,
+      "id": 13616,
       "firstname": "Testy",
       "lastname": "McTestface",
       "fullname": "Testy McTestface",
@@ -501,6 +507,8 @@ Errors
 
 Updates some of the data for a MemberConnex user with the given id.
 
+Accepted Person ids are `13616`, `13668`, and `8487645`
+
 Headers
 
     Authorization: Bearer <token>
@@ -540,7 +548,7 @@ Returns the updated user data
     200 Okay
 
     {
-      "id": 13669,
+      "id": 13616,
       "firstname": "Testy",
       "lastname": "McTestface",
       "fullname": "Testy McTestface",

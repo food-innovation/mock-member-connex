@@ -5,7 +5,8 @@ const json = `{
      {
         "Company":[
            {
-              "name":"Fial Test"
+              "name":"Fial Test",
+              "id": 123
            }
         ],
         "role":"Account",
