@@ -695,6 +695,40 @@ Errors
       "message": "Invalid Authorization Token."
     }
 
+### `GET /API/2.0/Event/:id/Image`
+
+Gets the image data for a MemberConnex event with the given id.
+
+Headers
+
+    Authorization: Bearer <token>
+
+Returns
+
+    200 Okay
+
+    [
+      {
+        "imagetype": "image/png",
+        "size": 2336499,
+        "name": "some file name sometimes with spaces in it.png",
+        "areaofuse": "<Content|Landscape|Abstract>",
+        "externalid": "",
+        "caption": "",
+        "id": 1460
+      },
+      ...
+    ]
+
+Errors
+
+    401 Unauthorized
+
+    {
+      "code": 234253,
+      "message": "Invalid Authorization Token."
+    }
+
 ## Development
 
 ### Prerequisites
