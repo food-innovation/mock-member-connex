@@ -15,6 +15,7 @@ describe('getImages', () => {
 
   context('given a valid token in the header', () => {
     const req = {
+      params: { id: '71' },
       get: () => 'some-access-token'
     }
 
@@ -35,6 +36,7 @@ describe('getImages', () => {
 
   context('without a valid token in the header', () => {
     const req = {
+      params: { id: '71' },
       get: () => undefined
     }
 

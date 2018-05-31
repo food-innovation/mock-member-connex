@@ -597,6 +597,14 @@ Errors
 
 Gets a list of the events known to MemberConnex.
 
+URL Params
+
+| Param | Values | Note |
+|--------|---------|-----|
+| `expand` | `Image` | optional, no default |
+
+If `expand=Image` is supplied then the event will also include its associated image data.
+
 Headers
 
     Authorization: Bearer <token>
@@ -631,7 +639,19 @@ Returns
         "venue": "",
         "videoembedcode": "",
         "videoinstructions": "",
-        "webinarurl": ""
+        "webinarurl": "",
+        "Image": [ // only if expand=Image
+          {
+            "imagetype": "image/png",
+            "size": 2336499,
+            "name": "some file name sometimes with spaces in it.png",
+            "areaofuse": "<Content|Landscape|Abstract>",
+            "externalid": "",
+            "caption": "",
+            "id": 1460
+          },
+          ...
+        ]
       },
       ...
     ]
@@ -648,6 +668,14 @@ Errors
 ### `GET /API/2.0/Event/:id`
 
 Gets the data for a MemberConnex event with the given id.
+
+URL Params
+
+| Param | Values | Note |
+|--------|---------|-----|
+| `expand` | `Image` | optional, no default |
+
+If `expand=Image` is supplied then the event will also include its associated image data.
 
 Headers
 
@@ -683,7 +711,18 @@ Returns
       "videoembedcode": "",
       "videoinstructions": "",
       "webinarurl": ""
-      "usertype": ""
+      "usertype": "",
+      "Image": [ // only if expand=Image
+        {
+          "imagetype": "image/png",
+          "size": 2336499,
+          "name": "some file name sometimes with spaces in it.png",
+          "areaofuse": "<Content|Landscape|Abstract>",
+          "externalid": "",
+          "caption": "",
+          "id": 1460
+        },
+        ...
     }
 
 Errors

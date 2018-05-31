@@ -1,4 +1,4 @@
-const { all } = require('src/scopedData/images')
+const { find } = require('src/scopedData/images')
 const authFail = require('src/utils/authFail')
 
 /*
@@ -6,9 +6,11 @@ const authFail = require('src/utils/authFail')
 */
 const getImages = (req, res) => {
   // const { Action: action, DataFilter_id: dfi } = req.query
+  const { id } = req.params
+
   const failed = authFail(req)
   if (failed) res.status(401).json(failed)
-  else res.json(all())
+  else res.json(find(id))
 }
 
 module.exports = getImages

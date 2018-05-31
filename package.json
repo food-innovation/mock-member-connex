@@ -51,7 +51,8 @@
     "exclude": [
       "src/index.js",
       "src/utils/config.js",
-      "src/scopedData/index.js"
+      "src/scopedData/index.js",
+      "src/scopedData/images/index.js"
     ],
     "reporter": [
       "lcov",
