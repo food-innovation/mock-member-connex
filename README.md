@@ -82,7 +82,7 @@ Returns a list of API versions.
 
     [
       {
-        version: "1.1.1",
+        version: "1.1.2",
         path: '/api/1'
       },
       {
