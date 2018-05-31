@@ -16,30 +16,56 @@ describe('getEvent', () => {
 
   context('given a valid token in the header', () => {
     context('given a known id', () => {
-      const req = {
-        get: () => 'some-access-token',
-        params: { id: event.id }
-      }
+      context('without images', () => {
+        const req = {
+          get: () => 'some-access-token',
+          params: { id: event.id },
+          query: {}
+        }
 
-      before(() => {
-        getEvent(req, res)
+        before(() => {
+          getEvent(req, res)
+        })
+
+        after(resetStubs)
+
+        it("didn't call res.status", () => {
+          expect(res.status).not.to.have.been.called
+        })
+
+        it('called res.json', () => {
+          expect(res.json).to.have.been.calledOnce
+        })
       })
 
-      after(resetStubs)
+      context('with images', () => {
+        const req = {
+          get: () => 'some-access-token',
+          params: { id: event.id },
+          query: { expand: 'Image' }
+        }
 
-      it("didn't call res.status", () => {
-        expect(res.status).not.to.have.been.called
-      })
+        before(() => {
+          getEvent(req, res)
+        })
 
-      it('called res.json', () => {
-        expect(res.json).to.have.been.calledOnce
+        after(resetStubs)
+
+        it("didn't call res.status", () => {
+          expect(res.status).not.to.have.been.called
+        })
+
+        it('called res.json', () => {
+          expect(res.json).to.have.been.calledOnce
+        })
       })
     })
 
     context('given an unknown id', () => {
       const req = {
         get: () => 'some-access-token',
-        params: { id: 0 }
+        params: { id: 0 },
+        query: {}
       }
 
       before(() => {
@@ -61,7 +87,8 @@ describe('getEvent', () => {
   context('without a valid token in the header', () => {
     const req = {
       get: () => undefined,
-      params: { id: 0 }
+      params: { id: 0 },
+      query: {}
     }
 
     before(() => {

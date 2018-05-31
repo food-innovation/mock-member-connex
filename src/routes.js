@@ -16,7 +16,8 @@ const {
   v2_people_getPerson,
   v2_people_putPerson,
   v2_events_getEvents,
-  v2_events_getEvent
+  v2_events_getEvent,
+  v2_events_getImages
 } = require('./api')
 
 module.exports = {
@@ -31,7 +32,8 @@ module.exports = {
     '/API/2.0/Person': v2_people_getPeople,
     '/API/2.0/Person/:id': v2_people_getPerson,
     '/API/2.0/Event': v2_events_getEvents,
-    '/API/2.0/Event/:id': v2_events_getEvent
+    '/API/2.0/Event/:id': v2_events_getEvent,
+    '/API/2.0/Event/:id/Image': v2_events_getImages
   },
   post: {
     '/Login': v1_postLogin,
