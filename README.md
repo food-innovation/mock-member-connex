@@ -618,6 +618,7 @@ Returns
         "id": 85,
         "name": "Amazing Test Event",
         "city": "Sydney",
+        "country": "AU",
         "region": "NSW",
         "datestart": "2018-11-15",
         "timestart": "09:00:00",
@@ -640,6 +641,7 @@ Returns
         "videoembedcode": "",
         "videoinstructions": "",
         "webinarurl": "",
+        "submissionstatus": "<Building|Active|Cancelled>",
         "Image": [ // only if expand=Image
           {
             "imagetype": "image/png",
@@ -689,6 +691,7 @@ Returns
       "id": 85,
       "name": "Amazing Test Event",
       "city": "Sydney",
+      "country": "AU",
       "region": "NSW",
       "datestart": "2018-11-15",
       "timestart": "09:00:00",
@@ -712,6 +715,7 @@ Returns
       "videoinstructions": "",
       "webinarurl": ""
       "usertype": "",
+      "submissionstatus": "<Building|Active|Cancelled>",
       "Image": [ // only if expand=Image
         {
           "imagetype": "image/png",
