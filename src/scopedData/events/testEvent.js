@@ -2,6 +2,7 @@ const json = `{
   "id": 85,
   "name": "Amazing Test Event",
   "city": "Sydney",
+  "country": "AU",
   "region": "NSW",
   "datestart": "2018-11-15",
   "timestart": "09:00:00",
@@ -23,7 +24,8 @@ const json = `{
   "venue": "",
   "videoembedcode": "",
   "videoinstructions": "",
-  "webinarurl": ""
+  "webinarurl": "",
+  "submissionstatus": "Active"
 }`
 
 module.exports = JSON.parse(json)
